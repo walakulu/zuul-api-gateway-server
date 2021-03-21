@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: zuul-api-gateway-server
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+#security:
+#  oauth2:
+#    resource:
+#      token-info-uri: http://localhost:9000/oauth/check_token
+#    client:
+#      client-id: api-user
+#      client-secret: pin
+
+zuul:
+#  add-host-header:
+  sensitive-headers:
+    - Cookie,Set-Cookie,Authorization
+
